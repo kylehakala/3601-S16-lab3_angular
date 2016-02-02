@@ -31,22 +31,32 @@ questions by editing this file.
 > views/ static html files with site content
 
 ##### What are the names of the Angular controllers in this web application? What does each of them do?
+> main.controller.js and navbar.controller.js are located in the public/javascript dir.
+> main.controller manages the petList functions, and navbar.controller manages the navbar contents in one place
 
 ##### Open the index.html view. What controller(s) is it using?
+> mainCtrl is the one being used
 
 ##### Where is the navigation bar included in the source code for index.html?
+> it's included as the first <div> in the <body>.
 
 ##### app.js within public/javascript is where your Angular modules are located at. What modules does the project currently have?
 
+
 ##### Notice, the code controlling the Node.js server is in a file also called app.js. There is no particular reason for this other than a generator we will use later on follows the same convention. Explain the difference between the purpose of the files (think client vs server).
+
 
 ##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart).
 
+
 ##### How are new items added and deleted through the web page? (i.e. - What functions from the main controller are used in index.html, and what Angular directives allow them to interact with the view?)
+
 
 ##### Open navbar.html view. What is its purpose? How would you go about adding links to the navigation bar?
 
+
 ##### Find two instances of use of bootstrap (see above) in either navbar view or index view or both; explain what is formatted.
+
 
 >Protip: Bootstrap is awesome. Start using it. Seriously. This allows you to do fancy things with styling (CSS) with very little effort. Think back to lab 1. http://getbootstrap.com/components/ <- Regular Bootstrap. https://angular-ui.github.io/bootstrap/ <- Angular Bootstrap. These offer separate functionality and both can be used simultaneously.
 

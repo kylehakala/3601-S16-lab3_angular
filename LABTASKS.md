@@ -13,16 +13,40 @@ questions by editing this file.
 - Observe the HTML element's formatting (it's done via bootstrap). As you are working on the questions below, experiment with the project to get a better sense for what each element is. 
 
 ##### List all the files at the top level of your project (i.e. not in public) and briefly state the purpose of each one, as you understand it. You might want to postpone describing some files until you work with the project a bit more. 
+> .gitignore: tells github to ignore the files in these directories to avoid uploading things like repositories.
+> .travis.yml: intiates travis ci
+> app.js contains routes for sending files and managing the server. Also holds express code.
+> bowser.json contains user information and dependency information for project
+> Gruntfile.js contains nodemon and karma information
+> karma.conf.js denotes which files are included in testing or possibly excluded.
+> LABTASKS.md ...directions
+> package.json information on dependencies
+> README.md.... yeah
+> /coverage/ ... contains files for testing coverage and displaying the results html page.
+
 ##### List the folders in the public folder and describe the purpose for each.
+> assets/ contains media files
+> css/ contains css stylesheets for styling the website
+> javascript/ stores js files for site functionality
+> views/ static html files with site content
+
 ##### What are the names of the Angular controllers in this web application? What does each of them do?
-##### Open the index.html view. What controller(s) is it using? 
-##### Where is the navigation bar included in the source code for index.html? 
+
+##### Open the index.html view. What controller(s) is it using?
+
+##### Where is the navigation bar included in the source code for index.html?
+
 ##### app.js within public/javascript is where your Angular modules are located at. What modules does the project currently have?
+
 ##### Notice, the code controlling the Node.js server is in a file also called app.js. There is no particular reason for this other than a generator we will use later on follows the same convention. Explain the difference between the purpose of the files (think client vs server).
-##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart). 
+
+##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart).
+
 ##### How are new items added and deleted through the web page? (i.e. - What functions from the main controller are used in index.html, and what Angular directives allow them to interact with the view?)
-##### Open navbar.html view. What is its purpose? How would you go about adding links to the navigation bar? 
-##### Find two instances of use of bootstrap (see above) in either navbar view or index view or both; explain what is formatted. 
+
+##### Open navbar.html view. What is its purpose? How would you go about adding links to the navigation bar?
+
+##### Find two instances of use of bootstrap (see above) in either navbar view or index view or both; explain what is formatted.
 
 >Protip: Bootstrap is awesome. Start using it. Seriously. This allows you to do fancy things with styling (CSS) with very little effort. Think back to lab 1. http://getbootstrap.com/components/ <- Regular Bootstrap. https://angular-ui.github.io/bootstrap/ <- Angular Bootstrap. These offer separate functionality and both can be used simultaneously.
 

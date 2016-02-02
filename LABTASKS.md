@@ -38,7 +38,7 @@ questions by editing this file.
 > mainCtrl is the one being used
 
 ##### Where is the navigation bar included in the source code for index.html?
-> it's included as the first \ <div\ > in the \ <body\ >.
+> it's included as the first div in the body.
 
 ##### app.js within public/javascript is where your Angular modules are located at. What modules does the project currently have?
 

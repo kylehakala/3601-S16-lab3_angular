@@ -38,13 +38,13 @@ questions by editing this file.
 > mainCtrl is the one being used
 
 ##### Where is the navigation bar included in the source code for index.html?
-> it's included as the first \ <div\ > in the \ <body\ >.
+> it's included as the first <div> in the <body>.
 
 ##### app.js within public/javascript is where your Angular modules are located at. What modules does the project currently have?
-
+> stdControllers and mainApp are the modules.
 
 ##### Notice, the code controlling the Node.js server is in a file also called app.js. There is no particular reason for this other than a generator we will use later on follows the same convention. Explain the difference between the purpose of the files (think client vs server).
-
+> The app.js file in the root is intended for routing and express code and server; the app.js file in /javascript lists the modules used.
 
 ##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart).
 

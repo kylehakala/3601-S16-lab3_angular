@@ -38,25 +38,25 @@ questions by editing this file.
 > mainCtrl is the one being used
 
 ##### Where is the navigation bar included in the source code for index.html?
-> it's included as the first <div> in the <body>.
+> it's included as the first div in the body.
 
 ##### app.js within public/javascript is where your Angular modules are located at. What modules does the project currently have?
-> stdControllers and mainApp are the modules.
+> mainApp and stdControllers
 
 ##### Notice, the code controlling the Node.js server is in a file also called app.js. There is no particular reason for this other than a generator we will use later on follows the same convention. Explain the difference between the purpose of the files (think client vs server).
-> The app.js file in the root is intended for routing and express code and server; the app.js file in /javascript lists the modules used.
+> The app.js file inside /javascript lists the modules. The app.js file in the root lists routing and server info.
 
 ##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart).
-
+> Done
 
 ##### How are new items added and deleted through the web page? (i.e. - What functions from the main controller are used in index.html, and what Angular directives allow them to interact with the view?)
-
+> mainControl.addData(), and removeData($index). ng-click, ng-model, ng-repeat, ng-submit
 
 ##### Open navbar.html view. What is its purpose? How would you go about adding links to the navigation bar?
-
+> navbar.html allows you to add new navbar links to all of the other html pages in a single place, rather than updating the code on each one separately.
 
 ##### Find two instances of use of bootstrap (see above) in either navbar view or index view or both; explain what is formatted.
-
+> nav nav-pills is used to format the navBar links into pill shaped buttons, and glyphicon glyphicon-trash floatRight adds the trash can to the list of items.
 
 >Protip: Bootstrap is awesome. Start using it. Seriously. This allows you to do fancy things with styling (CSS) with very little effort. Think back to lab 1. http://getbootstrap.com/components/ <- Regular Bootstrap. https://angular-ui.github.io/bootstrap/ <- Angular Bootstrap. These offer separate functionality and both can be used simultaneously.
 

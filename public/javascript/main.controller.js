@@ -3,7 +3,7 @@
         var mainControl = this;
         console.log("Main controller loaded!");
 
-        mainControl.textField = "";
+        mainControl.textField = "Kyle's Lists";
 
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
         mainControl.data = [
@@ -33,4 +33,7 @@
         mainControl.itemsInList = function(){
             return mainControl.data.length;
         };
+
+
+
     });

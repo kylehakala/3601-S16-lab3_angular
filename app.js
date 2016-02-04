@@ -36,6 +36,10 @@ app.get('/kittens', function(req, res){
     res.sendFile('public/views/kittens.html', options);
 });
 
+app.get('/GPA', function(req, res){
+    res.sendFile('public/views/GPA.html', options);
+});
+
 app.get('/about', function(req, res){
     res.sendFile('public/views/about.html', options);
 });

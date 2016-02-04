@@ -27,6 +27,7 @@
     <img src="assets/images/puppies.jpg">
     <button class="blockCenter" style="margin-top: 10px" type="button" onclick="sendAlert()">Send an alert!</button>
     <hr>
+
     <div class="container">
         <ul class="list-group">
             <li class="list-group-item">
@@ -41,6 +42,7 @@
             <li class="list-group-item" ng-repeat="test in mainControl.data">{{test.text}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="mainControl.removeData($index)"></span></li>
         </ul>
     </div>
+
     <div ng-include="'views/footer.html'"></div>
 </body>
 </html>

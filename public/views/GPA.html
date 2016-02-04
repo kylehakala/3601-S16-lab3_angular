@@ -28,7 +28,7 @@
 
             <form ng-submit="gpa.addCourse()">
                 <input ng-model="gpa.courseName" type="text" size="25" placeholder="Course Name">
-                <input ng-model="gpa.creditValue" type="text" size="25" placeholder="Credits">
+                <input ng-model="gpa.creditValue" type="number" size="25" placeholder="Credits">
 
                 <select ng-model="gpa.gradeLetter">
                     <option value="4">A</option>
@@ -37,7 +37,7 @@
                     <option value="1">D</option>
                     <option value="0">F</option>
                 </select>
-                
+
                 <input type="submit" value="add course" class="btn btn-primary">
                 <span class="floatRight">Items in this list: {{gpa.itemsInList()}}</span>
             </form>

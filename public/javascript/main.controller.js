@@ -3,7 +3,7 @@
         var mainControl = this;
         console.log("Main controller loaded!");
 
-        mainControl.textField = "Kyle's Lists";
+        mainControl.textField = "";
 
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
         mainControl.data = [

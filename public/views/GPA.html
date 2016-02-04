@@ -2,22 +2,52 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+    <title>GPA</title>
 
-<div class="container">
+    <!-- Loading Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
+    <!-- this makes the bootstrap.css visible to WebStorm so that it can provide suggestions for code completion -->
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/dist/css/bootstrap.css">
+
+    <!-- Loading Javascript Stuff -->
+    <script type="text/javascript" src="javascript/clientJavascript.js"></script>
+    <script type="text/javascript" src="angularjs/angular.js"></script>
+
+    <script type="text/javascript" src="javascript/app.js"></script>
+    <script type="text/javascript" src="javascript/main.controller.js"></script>
+    <script type="text/javascript" src="javascript/navbar.controller.js"></script>
+    <script type="text/javascript" src="javascript/gpa.controller.js"></script>
+</head>
+<body ng-app="mainApp">
+<div ng-include="'views/navbar.html'"></div>
+
+<div class="container" ng-controller="gpaCtrl as gpa">
     <ul class="list-group">
         <li class="list-group-item">
 
-            <form ng-submit="mainControl.addData()">
-                <input ng-model="mainControl.textField" type="text" size="50" placeholder="add a new item to the list!">
-                <input type="submit" value="submit" class="btn btn-primary">
-                <span class="floatRight">Items in this list: {{mainControl.itemsInList()}}</span>
+            <form ng-submit="gpa.addCourse()">
+                <input ng-model="gpa.courseName" type="text" size="25" placeholder="Course Name">
+                <input ng-model="gpa.creditValue" type="text" size="25" placeholder="Credits">
+
+                <select ng-model="gpa.gradeLetter">
+                    <option value="4">A</option>
+                    <option value="3">B</option>
+                    <option value="2">C</option>
+                    <option value="1">D</option>
+                    <option value="0">F</option>
+                </select>
+                
+                <input type="submit" value="add course" class="btn btn-primary">
+                <span class="floatRight">Items in this list: {{gpa.itemsInList()}}</span>
             </form>
 
         </li>
-        <li class="list-group-item" ng-repeat="test in mainControl.data">{{test.text}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="mainControl.removeData($index)"></span></li>
+
+        <li class="list-group-item" ng-repeat="class in gpa.classes">
+            <!--{{test.text}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="gpa.removeData($index)"></span>-->
+            {{class.course}} | {{class.credits}} | {{class.grade}}
+        </li>
     </ul>
 </div>
 

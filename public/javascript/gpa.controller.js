@@ -5,41 +5,34 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
 
     //storage for course information
 
-    mainControl.textField = "Course:";
-    mainControl.textField = "Credits:";
-    mainControl.textField = "Grade: (A, B, C, D, F)";
+    gpa.courseName = "Course:";
+    gpa.creditValue = "Credits:";
+    gpa.gradeLetter = "Grade: (A, B, C, D, F)";
 
-    mainControl.courses = [
-        {text: "1201"},
-        {text: "1301"},
-        {text: "1302"},
-        {text: "1001"},
-        {text: "1251"},
-        {text: "3601"}
+
+    gpa.classes = [
+        {course: "1201", credits: 4, grade: "A"}
     ];
 
-    mainControl.credits = [
-        {number: 4},
-        {number: 4},
-        {number: 4},
-        {number: 4},
-        {number: 4},
-        {number: 4}
-    ];
-
-    mainControl.grades = [
-        {text: "A"},
-        {text: "B"},
-        {text: "B"},
-        {text: "A"},
-        {text: "C"},
-        {text: "A"}
-    ];
-
-    mainControl.addCourse = function(){
-        if(mainControl.textField.length >= 1) {
-            mainControl.courses.push({text: mainControl.textField});
-            mainControl.textField = "";
+    gpa.addCourse = function(){
+        if(gpa.classes.length >= 1) {
+            gpa.classes.push({course: gpa.courseName, credits: gpa.creditValue, grade: gpa.gradeLetter});
+            console.log("course was pushed");
+            gpa.courseName = "Course:";
+            gpa.creditValue = "Credits:";
+            gpa.gradeLetter = "Grade: (A, B, C, D, F)";
         }
+    };
+
+    gpa.removeData = function(index){
+        gpa.classes.splice(index, 1);
+    };
+
+    gpa.cat = function(str1, str2){
+        return str1 + str2;
+    };
+
+    gpa.itemsInList = function(){
+        return gpa.classes.length;
     };
 });

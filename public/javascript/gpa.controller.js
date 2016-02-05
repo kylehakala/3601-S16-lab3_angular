@@ -5,9 +5,9 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
 
     //storage for course information
 
-    gpa.courseName = "Course:";
-    gpa.creditValue = "Credits:";
-    gpa.gradeLetter = "Grade: (A, B, C, D, F)";
+    gpa.courseName = "";
+    gpa.creditValue = "";
+    gpa.gradeLetter = "";
 
 
     gpa.classes = [
@@ -15,12 +15,12 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
     ];
 
     gpa.addCourse = function(){
-        if(gpa.classes.length >= 1) {
+        if(gpa.courseName.length >= 1 && gpa.creditValue >= 1 && gpa.gradeLetter != "") {
             gpa.classes.push({course: gpa.courseName, credits: gpa.creditValue, grade: gpa.gradeLetter});
             console.log("course was pushed");
-            gpa.courseName = "Course:";
-            gpa.creditValue = "Credits:";
-            gpa.gradeLetter = "Grade: (A, B, C, D, F)";
+            gpa.courseName = "";
+            gpa.creditValue = "";
+            gpa.gradeLetter = "";
         }
     };
 
@@ -34,5 +34,18 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
 
     gpa.itemsInList = function(){
         return gpa.classes.length;
+    };
+
+
+
+    gpa.getGPA = function(){
+        var creditTotal = 0;
+        var gradePointTotal = 0;
+
+        for(var i = 0; i < gpa.classes.length; i++) {
+            creditTotal += gpa.classes[i].credits;
+            //gradePointTotal += gpa.classes[i].grade;
+        }
+
     };
 });

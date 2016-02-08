@@ -11,7 +11,7 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
 
 
     gpa.classes = [
-        {course: "1201", credits: 4, grade: "A"}
+        {course: "1201", credits: 4, grade: "B"}
     ];
 
     gpa.addCourse = function(){
@@ -42,28 +42,37 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
         var creditTotal = 0;
         var gradePointTotal = 0;
 
-        for(var i = 0; i < gpa.classes.length; i++) {
+        for(var i = 0; i < gpa.classes.length ; i++) {
             var gradePointPerClass = 0;
             creditTotal += gpa.classes[i].credits;
-            gradePointPerClass = gpa.convertFromLetter(gpa.classes[i].grade) * gpa.classes[i].credits;
+            gradePointPerClass = gpa.convertFromLetter(i) * gpa.classes[i].credits;
             gradePointTotal += (gradePointPerClass);
+            console.log("Credit Total: " + creditTotal);
+            console.log("GP Per Class: " + gradePointPerClass);
+            console.log("GradePoint Total: " + gradePointTotal);
+            console.log("--------");
         }
+        console.log("Returns: " + gradePointTotal/creditTotal);
+        console.log("----------------------");
         return gradePointTotal/creditTotal;
+
     };
 
-    gpa.convertFromLetter = function() {
+    gpa.convertFromLetter = function(i) {
         var gradePoint = 0;
-        if (gpa.classes.grade = "A") {
+        if (gpa.classes[i].grade = "A") {
             gradePoint = 4;
-        } else if (gpa.classes.grade = "B") {
+        } else if (gpa.classes[i].grade = "B") {
             gradePoint = 3;
-        } else if (gpa.classes.grade = "C") {
+        } else if (gpa.classes[i].grade = "C") {
             gradePoint = 2;
-        } else if (gpa.classes.grade = "D") {
+        } else if (gpa.classes[i].grade = "D") {
             gradePoint = 1;
         } else {
             gradePoint = 0;
         }
+        console.log("letterConvert: " + gradePoint);
+        console.log("-----");
         return gradePoint;
     };
 });

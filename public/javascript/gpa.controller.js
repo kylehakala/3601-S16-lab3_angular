@@ -11,7 +11,7 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
 
 
     gpa.classes = [
-        {course: "1201", credits: 4, grade: "B"}
+        /*{course: "1302", credits: 3, grade: "C"}*/
     ];
 
     gpa.addCourse = function(){
@@ -37,7 +37,6 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
     };
 
 
-
     gpa.getGPA = function(){
         var creditTotal = 0;
         var gradePointTotal = 0;
@@ -47,32 +46,52 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
             creditTotal += gpa.classes[i].credits;
             gradePointPerClass = gpa.convertFromLetter(i) * gpa.classes[i].credits;
             gradePointTotal += (gradePointPerClass);
-            console.log("Credit Total: " + creditTotal);
-            console.log("GP Per Class: " + gradePointPerClass);
-            console.log("GradePoint Total: " + gradePointTotal);
-            console.log("--------");
+            //console.log("Credit Total: " + creditTotal);
+            //console.log("GP Per Class: " + gradePointPerClass);
+            //console.log("GradePoint Total: " + gradePointTotal);
+            //console.log("--------");
         }
-        console.log("Returns: " + gradePointTotal/creditTotal);
-        console.log("----------------------");
+        //console.log("Returns: " + gradePointTotal/creditTotal);
+        //console.log("----------------------");
+
+        gpa.colorCode = gpa.colorChange(gradePointTotal/creditTotal);
         return gradePointTotal/creditTotal;
+
 
     };
 
     gpa.convertFromLetter = function(i) {
         var gradePoint = 0;
-        if (gpa.classes[i].grade = "A") {
+        if (gpa.classes[i].grade === "A") {
             gradePoint = 4;
-        } else if (gpa.classes[i].grade = "B") {
+        } else if (gpa.classes[i].grade === "B") {
             gradePoint = 3;
-        } else if (gpa.classes[i].grade = "C") {
+        } else if (gpa.classes[i].grade === "C") {
             gradePoint = 2;
-        } else if (gpa.classes[i].grade = "D") {
+        } else if (gpa.classes[i].grade === "D") {
             gradePoint = 1;
         } else {
             gradePoint = 0;
         }
-        console.log("letterConvert: " + gradePoint);
-        console.log("-----");
+        //console.log("Letter was: " + gpa.classes[i].grade);
+        //console.log("letterConvert: " + gradePoint);
+        //console.log("-----");
         return gradePoint;
     };
+
+    gpa.colorChange = function(gpa) {
+        if (gpa < 2.0) {
+            return "#ff4d4d";
+        } else if (gpa >= 2.0 && gpa < 3.0) {
+            return "#ffb84d";
+        } else {
+            return "#66ff66";
+        };
+    };
+
+    gpa.colorCode = 0
+
+
+
+
 });

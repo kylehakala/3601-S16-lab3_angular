@@ -23,3 +23,11 @@ img {
 .floatRight {
     float: right;
 }
+
+#gpaDisplay {
+    text-align: center;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    font-size: 1.5em;
+
+}

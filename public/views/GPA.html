@@ -30,8 +30,8 @@
                 <input ng-model="gpa.courseName" type="text" size="25" placeholder="Course Name">
                 <input ng-model="gpa.creditValue" type="number" size="25" placeholder="Credits">
 
-                <select ng-model="gpa.gradeLetter" >
-                    <option selected>A</option>
+                <select ng-model="gpa.gradeLetter" type="text">
+                    <option>A</option>
                     <option>B</option>
                     <option>C</option>
                     <option>D</option>
@@ -49,8 +49,11 @@
             {{class.course}} | {{class.credits}} | {{class.grade}}
         </li>
     </ul>
-    <input class="btn btn-primary" value="Calculate GPA" ng-click="gpa.getGPA()">
-    {{gpa.getGPA()}}
+
+
+    <div>
+        <span ng-style="{'background-color': gpa.colorCode}" id="gpaDisplay";>Your current GPA is: {{gpa.getGPA()}}</span>
+    </div>
     <!--<input type="submit" value="Calculate" class="btn btn-primary" ng-click>{{gpa.getGPA()}}-->
 
 </div>

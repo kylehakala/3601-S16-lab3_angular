@@ -52,7 +52,7 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
     };
 
     gpa.convertFromLetter = function() {
-        var gradePoint = 0
+        var gradePoint = 0;
         if (gpa.classes.grade = "A") {
             gradePoint = 4;
         } else if (gpa.classes.grade = "B") {

@@ -43,9 +43,27 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
         var gradePointTotal = 0;
 
         for(var i = 0; i < gpa.classes.length; i++) {
+            var gradePointPerClass = 0;
             creditTotal += gpa.classes[i].credits;
-            //gradePointTotal += gpa.classes[i].grade;
+            gradePointPerClass = gpa.convertFromLetter(gpa.classes[i].grade) * gpa.classes[i].credits;
+            gradePointTotal += (gradePointPerClass);
         }
+        return gradePointTotal/creditTotal;
+    };
 
+    gpa.convertFromLetter = function() {
+        var gradePoint = 0
+        if (gpa.classes.grade = "A") {
+            gradePoint = 4;
+        } else if (gpa.classes.grade = "B") {
+            gradePoint = 3;
+        } else if (gpa.classes.grade = "C") {
+            gradePoint = 2;
+        } else if (gpa.classes.grade = "D") {
+            gradePoint = 1;
+        } else {
+            gradePoint = 0;
+        }
+        return gradePoint;
     };
 });

@@ -27,10 +27,6 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
         gpa.classes.splice(index, 1);
     };
 
-    gpa.cat = function(str1, str2){
-        return str1 + str2;
-    };
-
     gpa.itemsInList = function(){
         return gpa.classes.length;
     };
@@ -52,7 +48,13 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
 
         var finalGPA = Math.round((gradePointTotal/creditTotal) * 100) / 100;
         gpa.colorCode = gpa.colorChange(finalGPA);
-        return finalGPA;
+
+        if (finalGPA >= 0.0) {
+            return finalGPA;
+        } else {
+            return "Add a course to begin!"
+        };
+
 
 
     };
@@ -60,15 +62,15 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
     gpa.convertFromLetter = function(i) {
         var gradePoint = 0;
         if (gpa.classes[i].grade === "A") {
-            gradePoint = 4;
+            gradePoint = 4.00;
         } else if (gpa.classes[i].grade === "B") {
-            gradePoint = 3;
+            gradePoint = 3.00;
         } else if (gpa.classes[i].grade === "C") {
-            gradePoint = 2;
+            gradePoint = 2.00;
         } else if (gpa.classes[i].grade === "D") {
-            gradePoint = 1;
+            gradePoint = 1.00;
         } else {
-            gradePoint = 0;
+            gradePoint = 0.00;
         }
         //console.log("Letter was: " + gpa.classes[i].grade);
         //console.log("letterConvert: " + gradePoint);

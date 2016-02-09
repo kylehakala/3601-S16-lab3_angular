@@ -11,7 +11,6 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
 
 
     gpa.classes = [
-        /*{course: "1302", credits: 3, grade: "C"}*/
     ];
 
     gpa.addCourse = function(){
@@ -46,16 +45,14 @@ angular.module('stdComponents').controller('gpaCtrl', function(){
             creditTotal += gpa.classes[i].credits;
             gradePointPerClass = gpa.convertFromLetter(i) * gpa.classes[i].credits;
             gradePointTotal += (gradePointPerClass);
-            //console.log("Credit Total: " + creditTotal);
-            //console.log("GP Per Class: " + gradePointPerClass);
-            //console.log("GradePoint Total: " + gradePointTotal);
-            //console.log("--------");
-        }
-        //console.log("Returns: " + gradePointTotal/creditTotal);
-        //console.log("----------------------");
 
-        gpa.colorCode = gpa.colorChange(gradePointTotal/creditTotal);
-        return gradePointTotal/creditTotal;
+        }
+
+
+
+        var finalGPA = Math.round((gradePointTotal/creditTotal) * 100) / 100;
+        gpa.colorCode = gpa.colorChange(finalGPA);
+        return finalGPA;
 
 
     };
